@@ -1,0 +1,173 @@
+
+<!doctype html >
+<html lang="pl">
+    <head>
+        <meta charset="utf-8" >
+        <title>Kryptografia</title>
+        <link rel="StyleSheet" href="style.css" type="text/css">
+        <script src="scripts.js"></script>
+    </head>
+
+    <body>
+        <header> <h1>Kryptografia</h1> </header>
+
+        <nav id="content">
+            <ul>
+                <li onclick="goToId('introduction');">Wstęp</li>
+                <li onclick="goToId('history');"> Historia</li>
+                <li onclick="goToId('symetric_key');">Szyfrowanie z kluczem symetrycznym</li>
+                <li onclick="goToId('public_key');">Kryptografia klucza publicznego</li>
+                <li onclick="goToId('RSA');">Algorytm RSA</li>
+                <li onclick="goToId('prime_numbers');">Liczby pierwsze</li>
+                <li onclick="location.href='dokumentacja.html'">Dokumentacja</li>
+            </ul>
+        </nav>
+
+        <div id="introduction">
+            <div class=inside>
+                <article>
+                        <h2>Wstęp</h2>
+                        <p>
+                            Kryptografia lub kryptologia, jest dziedziną zajmującą się praktyką oraz badaniem technik bezpiecznej komunikacji w obecności 
+                            wrogiego zachowania. Mówiąc bardziej ogólnie, kryptografia polega na konstruowaniu i analizowaniu 
+                            protokołów, które uniemożliwiają osobom trzecim lub opinii publicznej odczytywanie prywatnych 
+                            wiadomości; różne aspekty bezpieczeństwa informacji, takie jak poufność danych, integralność danych, 
+                            uwierzytelnianie i niezaprzeczalność są kluczowe dla nowoczesna kryptografia.
+                        </p>
+                        <div class="key_image">
+                            <img src="pictures/key.jpg" alt = "key_img">
+                        </div>
+                </article>
+            </div>
+        </div>
+
+        <div id="history">
+            <div class=inside>
+                <article>
+                        <h2>Historia</h2>
+                        <p>
+                            Kryptografia sprzed ery nowożytnej była praktycznie synonimem szyfrowania, przekształcania informacji
+                            ze stanu czytelnego w niezrozumiały nonsens w celu wykluczenia jej odczytania przez osoby niemające 
+                            klucza do odszyfrowania, a które mogłyby tę wiadomość przechwycić lub podsłuchać. Jednym z 
+                            najwcześniejszych szyfrów podstawieniowych był szyfr Cezara, w którym każda litera tekstu jawnego
+                            zastępowana była literą oddaloną o pewną ustaloną liczbę pozycji w alfabecie. Szyfr ten został 
+                            nazwany na cześć Juliusza Cezara, który używał go (z przesunięciem o 3) do komunikacji podczas kampanii 
+                            wojskowych.<br/><br/>
+                            Przykład kodu cezara:
+                        </p>
+                            <div id="cipher" onmouseover="change()" onmouseout="change_back()">
+                                QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD
+                            </div>
+                            <br/>
+                            <div class="szyfr_cezara_image">
+                                <img src="pictures/szyfr_cezara.jpg" alt = "szyfr_cezara_img" width="400">
+                            </div>
+                </article>
+            </div>
+        </div>
+
+        <div id="symetric_key">
+            <div class=inside>
+                <article>
+                        <h2>Szyfrowanie z kluczem symetrycznym</h2>
+                        <dl>
+                            <dt>
+                                Termin kryptografia symetryczna odnosi się do metod, w których nadawca i odbiorca wiadomości używają tego  
+                                samego klucza (rzadziej: różnych kluczy, ale łatwych do wyliczenia jeden na podstawie drugiego). Szyfry
+                                z kluczem symetrycznym są zaimplementowane jako szyfry blokowe lub strumieniowe. 
+                            </dt>
+                            <dd>
+                                Szyfr blokowy polega na szyfrowaniu bloku wejściowego (np. fragmentu pliku) na podstawie zadanego klucza, 
+                                przekształcając go na blok wyjściowy o takiej samej długości w taki sposób, że niemożliwe jest
+                                odwrócenie tego przekształcenia bez posiadania klucza.
+                                <div class="szyfrowanie_blokowe_image">
+                                    <img src="pictures/szyfrowanie_blokowe.jpg" alt = "szyfrowanie_blokowe_img">
+                                </div>
+                            </dd>
+                            <dd>
+                                Szyfr strumieniowy (także: algorytm strumieniowy, algorytm potokowy) – algorytm symetryczny, który 
+                                szyfruje oddzielnie każdy bit wiadomości. Algorytm ten składa się z generatora strumienia bitowego,
+                                będącego kluczem szyfrującym oraz elementu dodającego (na przykład operacji XOR).
+                                <div class="szyfrowanie_strumieniowe_image">
+                                    <img src="pictures/szyfrowanie_strumieniowe.jpg" alt = "szyfrowanie_strumieniowe_img">
+                                </div>
+                            </dd>
+                        </dl>
+                </article>
+            </div>
+        </div>
+
+        <div id="public_key">
+            <div class=inside>
+                <article>
+                        <h2>Kryptografia klucza publicznego</h2>
+                        <p>
+                            Kryptografia klucza publicznego (kryptografia asymetryczna) – rodzaj kryptografii, w którym jeden z 
+                            używanych kluczy jest udostępniony publicznie. Każdy użytkownik może użyć tego klucza do zaszyfrowania
+                            wiadomości, ale tylko posiadacz drugiego, tajnego klucza może odszyfrować taką wiadomość. Istnieją 
+                            również bardziej zaawansowane algorytmy wykorzystujące więcej kluczy i inne zależności między kluczami.
+                            Kryptografia asymetryczna opiera się na funkcjach jednokierunkowych – takich, które da się łatwo 
+                            wyliczyć w jedną stronę, ale bardzo trudno w drugą. Np. mnożenie jest łatwe, a rozkład na czynniki
+                            (z ang. faktoryzacja) trudny (na czym przykładowo opiera się RSA).
+                        </p>
+                        <div class="klucz_publiczny_image">
+                            <img src="pictures/klucz_publiczny.jpg" alt = "klucz_publiczny_img" width="500">
+                        </div>
+                </article>
+            </div>
+        </div>
+
+        <div id="RSA">
+            <div class=inside>
+                <article>
+                        <h2>Algorytm RSA</h2>
+                        <p>W celu wygenerowania pary kluczy (prywatnego i publicznego) należy posłużyć się następującym algorytmem:</p>
+                        <ol>
+                            <li>Wybieramy dwie duże liczby pierwsze {p, q}(>200cyfr)</li>
+                            <li>Obliczamy iloczyn n = p*q</li>
+                            <li>Losujemy liczby 1 &lt; e &lt; (p-1)(q-1)</li>
+                            <li>e jest względnie piewszą liczbą: (p-1)(q-1)</li>
+                            <li>e jest kluczem szyfrującym</li>
+                            <li>wyliczamy liczby d o własności e*d = 1(mod(p-1)(q-1)), tzn d jest odwrotnością modulo liczby e</li>
+                            <li>liczby d i e oraz d i n są względnie pierwsze</li>
+                            <li>d jest kluczem deszyfrującym</li>
+                            <li>{e, n} są ujawnionym kluczem publicznym</li>
+                            <li>{d, n} są tajnym kluczem prywatnym</li>
+                        </ol>
+                        <p>  
+                            Ciągły wzrost mocy obliczeniowej komputerów zwiększa długość klucza, przy której atak typu brute-force 
+                            może się powieść. Przedmiotem troski niektórych kryptografów są ewentualne efekty potencjalnego rozwoju
+                            obliczeń przy pomocy komputerów kwantowych.
+                        </p>
+                </article>
+            </div>
+        </div>
+
+        <div id="prime_numbers">
+            <div class=inside>
+                <article>
+                        <h2>Liczby pierwsze</h2>                
+                        <div class="canv">
+                            <canvas id="cnv" width="500" height="400"></canvas>
+                            <script src="canvas.js"></script>    
+                        </div>
+
+
+                        <div style="width: 45%; height: 400px; text-align: justify;">
+                            <p>Liczba pierwsza – liczba naturalna większa od 1, która ma dokładnie dwa dzielniki naturalne: jedynkę
+                                i siebie samą. <br/>
+                                Aby znaleźć wszystkie liczby pierwsze w zadanym przedziale liczbowym, można posłużyć się algorytmem 
+                                zwanym sitem Eratostenesa: jeśli liczba naturalna N większa od 1 nie jest podzielna przez żadną z
+                                liczb pierwszych nie większych od pierwiastka z N to N jest liczbą pierwszą.
+                            </p>
+                        </div>
+                </article>
+            </div>
+        </div>
+
+        <footer>
+            Mateusz Niepokój, WFiIS, IS - Strona zrealizowana w ramach projektu z przedmiotu Techniki Internetowe.
+        </footer>
+
+    </body>
+</html>
